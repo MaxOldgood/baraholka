@@ -1,0 +1,17 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  height: 100svh;
+  width: 100%;
+  background-color: var(--color-light);
+
+  &__header {
+    height: 72px;
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+}
