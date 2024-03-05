@@ -1,0 +1,33 @@
+@use '../../app/styles/mixins' as mixins;
+@use '../../app/styles/media' as media;
+
+
+.menu{
+
+    &__list{
+        display: flex;
+    }
+
+    &__link{
+        padding-inline: 16px;
+        padding-block: 8px;
+        color: var(--color-dark-alt);
+        
+        @include mixins.reset-link;
+        
+        &:hover{
+            @include media.hover {
+                color: var(--color-dark);
+                font-weight: 700;
+                transition-duration:var(--transition-duration);
+
+        }
+   
+
+
+
+        }
+
+
+    }
+}

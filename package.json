@@ -10,10 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.2",
+    "react-svg": "^16.1.33",
+    "sort-by": "^1.2.0"
   },
   "devDependencies": {
+    "@svgr/core": "^8.1.0",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
@@ -25,6 +31,7 @@
     "gh-pages": "^6.1.1",
     "sass": "^1.71.1",
     "typescript": "^5.2.2",
-    "vite": "^5.1.4"
+    "vite": "^5.1.4",
+    "vite-plugin-svgr": "^4.2.0"
   }
 }

@@ -1,0 +1,30 @@
+@import '../../../app/styles/mixins';
+
+.logo{
+    @include reset-link;
+
+    &__text {
+        color: rgb(31, 41, 55);
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    
+        &::before{
+            content:url('../../assets/icons/logo.svg');
+            display: inline-block;
+            height: 24px;
+            width: 24px;
+            border-radius: 6px;
+        }
+    }
+
+
+
+}
+
+
+

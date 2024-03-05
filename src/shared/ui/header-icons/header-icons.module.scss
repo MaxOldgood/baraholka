@@ -1,0 +1,24 @@
+.icons {
+    display: flex;
+    justify-content: end;
+    gap: 12px;
+    padding-inline: 16px;
+}
+
+.link {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.image {
+        color: var(--color-dark-alt);
+
+        &:hover {
+            color: var(--color-dark);
+            transition-duration:var(--transition-duration);
+        }
+    }
+    
