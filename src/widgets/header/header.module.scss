@@ -1,3 +1,5 @@
+@use '../../app/styles/mixins' as mixins;
+@use '../../app/styles/media' as media;
 
 .header {
     width: 100%;
@@ -6,4 +8,19 @@
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     align-items: center;
+
+    @include media.mobile{
+        grid-template-columns: 1fr auto 1fr;
+
+    }
+
+
+    &__icons {
+        @include media.mobile{
+            padding-inline: 0px;
+            padding-left: 15px;
+            gap: 3px;
+        }
+    }
 }
+

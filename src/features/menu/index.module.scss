@@ -21,13 +21,15 @@
                 font-weight: 700;
                 transition-duration:var(--transition-duration);
 
-        }
-   
-
-
-
+            }
         }
 
 
     }
+    .active {
+        color: var(--color-dark);
+        font-weight: 700;
+    }
+
+
 }

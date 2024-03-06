@@ -1,3 +1,4 @@
+@use '../../app/styles/media' as media;
 :root {
   --color-dark: #1f2937;
   --color-dark-alt: #4b5563;
@@ -7,6 +8,9 @@
   --font-family-base: 'Work-Sans', sans-serif;
   --container-width: 1240px;
   --container-padding-x: 20px;
-
   --transition-duration: 0.2s;
+
+  @include media.mobile {
+    --container-padding-x: 10px;
+  }
 }

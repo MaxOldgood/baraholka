@@ -14,10 +14,10 @@
 }
 
 .image {
-        color: var(--color-dark-alt);
+        fill: var(--color-dark-alt);
 
         &:hover {
-            color: var(--color-dark);
+            fill: var(--color-dark);
             transition-duration:var(--transition-duration);
         }
     }
