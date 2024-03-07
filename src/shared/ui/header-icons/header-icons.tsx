@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Cart from '../../assets/icons/cart.svg?react'
 import User from '../../assets/icons/user.svg?react'
 import styles from './header-icons.module.scss'
@@ -11,12 +12,12 @@ export function HeaderIcons(props: HeaderIconProps) {
 
   return (
     <div className={`${styles.icons}  ${className}`}>
-      <a className={styles.link} href="/">
+      <Link className={styles.link} to="/user">
         <User className={styles.image} height="30" />
-      </a>
-      <a className={styles.link} href="/">
+      </Link>
+      <Link className={styles.link} to="/cart">
         <Cart className={styles.image} height="30" />
-      </a>
+      </Link>
     </div>
   )
 }
