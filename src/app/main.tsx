@@ -8,7 +8,7 @@ import { Auth } from '../pages/auth/auth'
 import { Cart } from '../pages/cart/cart'
 import { Details } from '../pages/details/details'
 import { Shop } from '../pages/home/shop'
-import { User } from '../pages/user/user'
+import { Jul } from '../pages/user/jul'
 
 const container = document.getElementById('root')
 
@@ -37,8 +37,8 @@ if (container) {
           element: <About />,
         },
         {
-          path: '/baraholka/user',
-          element: <User />,
+          path: '/baraholka/jul',
+          element: <Jul />,
         },
         {
           path: '/baraholka/cart',

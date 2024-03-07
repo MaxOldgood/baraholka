@@ -2,6 +2,7 @@
 @use '../../app/styles/media' as media;
 
 .header {
+    opacity: 1;
     width: 100%;
     height: 100%;
     display: grid;
@@ -21,6 +22,11 @@
             padding-left: 15px;
             gap: 3px;
         }
+    }
+
+    &__disappear {
+        opacity: 0;
+        transition-duration: 3s;
     }
 }
 
