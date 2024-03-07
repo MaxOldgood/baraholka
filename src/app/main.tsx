@@ -3,12 +3,12 @@ import ReactDOM, { createRoot } from 'react-dom/client'
 import App from './App'
 import './styles/styles.scss'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { About } from '../pages/about/about'
 import { Auth } from '../pages/auth/auth'
+import { Cart } from '../pages/cart/cart'
 import { Details } from '../pages/details/details'
 import { Shop } from '../pages/home/shop'
-import { About } from '../pages/about/about'
 import { User } from '../pages/user/user'
-import { Cart } from '../pages/cart/cart'
 
 const container = document.getElementById('root')
 
@@ -17,31 +17,31 @@ if (container) {
 
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: '/baraholka/',
       element: <App />,
       children: [
         {
-          path: '/shop',
+          path: '/baraholka/shop',
           element: <Shop />,
         },
         {
-          path: 'shop/:productId',
+          path: '/baraholka/shop/:productId',
           element: <Details />,
         },
         {
-          path: '/auth',
+          path: '/baraholka/auth',
           element: <Auth />,
         },
         {
-          path: '/about',
+          path: '/baraholka/about',
           element: <About />,
         },
         {
-          path: '/user',
+          path: '/baraholka/user',
           element: <User />,
         },
         {
-          path: '/cart',
+          path: '/baraholka/cart',
           element: <Cart />,
         },
       ],

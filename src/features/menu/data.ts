@@ -1,4 +1,4 @@
 export const DATA = [
-  { path: '/shop', name: 'Shop' },
-  { path: '/about', name: 'About' },
+  { path: '/baraholka/shop', name: 'Shop' },
+  { path: '/baraholka/about', name: 'About' },
 ]
