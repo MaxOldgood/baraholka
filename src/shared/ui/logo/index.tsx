@@ -8,7 +8,7 @@ interface LogoProps {
 export function Logo(props: LogoProps) {
   const { className } = props
   return (
-    <Link className={`${styles.logo}  ${className}`} to="/">
+    <Link className={`${styles.logo}  ${className}`} to="/baraholka/">
       <h2 className={styles.logo__text}> BARAHOLKA</h2>
     </Link>
   )

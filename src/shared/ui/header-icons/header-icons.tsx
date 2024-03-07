@@ -12,10 +12,10 @@ export function HeaderIcons(props: HeaderIconProps) {
 
   return (
     <div className={`${styles.icons}  ${className}`}>
-      <Link className={styles.link} to="/user">
+      <Link className={styles.link} to="/baraholka/user">
         <User className={styles.image} height="30" />
       </Link>
-      <Link className={styles.link} to="/cart">
+      <Link className={styles.link} to="/baraholka/cart">
         <Cart className={styles.image} height="30" />
       </Link>
     </div>
