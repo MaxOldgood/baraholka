@@ -1,0 +1,38 @@
+.product_card{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 293px;
+    cursor: pointer;
+
+
+    &__image {
+        background-color: #f3f3f3;
+        border: none;
+        transition: transform 0.2s ease-in-out;
+
+
+        &:hover {
+            transform: scale(1.02);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 0px 0px -5px;
+        }
+    }
+
+    
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    &__like {
+        fill: var(--color-dark-alt);
+        width: 20px;
+        cursor: pointer;
+
+        &:hover {
+            fill: var(--color-dark);
+        }
+    }
+}
