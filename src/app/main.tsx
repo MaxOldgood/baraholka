@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM, { createRoot } from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
 import App from './App'
 import './styles/styles.scss'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -8,7 +8,7 @@ import { Auth } from '../pages/auth/auth'
 import { Cart } from '../pages/cart/cart'
 import { Details } from '../pages/details/details'
 import { Shop } from '../pages/home/shop'
-import { Jul } from '../pages/user/jul'
+import { User } from '../pages/user/user'
 
 const container = document.getElementById('root')
 
@@ -37,8 +37,8 @@ if (container) {
           element: <About />,
         },
         {
-          path: '/baraholka/jul',
-          element: <Jul />,
+          path: '/baraholka/user',
+          element: <User />,
         },
         {
           path: '/baraholka/cart',
