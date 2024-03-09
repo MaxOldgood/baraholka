@@ -1,15 +1,22 @@
 import Like from '../../shared/assets/icons/like.svg?react'
 import styles from './product-card.module.scss'
 
-export function ProductCard() {
+interface ProductCardProps {
+  image: string
+  price: string
+  title: string
+}
+
+export function ProductCard(props: ProductCardProps) {
+  const { image, price, title } = props
   return (
     <div className={styles.product_card}>
-      <img className={styles.product_card__image} src="" alt="product name" width={293} height={293} />
+      <img className={styles.product_card__image} src={image} alt={title} width={293} height={293} />
       <div className={styles.product_card__header}>
-        <span className={styles.product_card__name}>Product Name</span>
+        <span className={styles.product_card__name}>{title}</span>
         <Like className={styles.product_card__like} />
       </div>
-      <span className={styles.product_card__price}>$9.99</span>
+      <span className={styles.product_card__price}>${price}</span>
     </div>
   )
 }

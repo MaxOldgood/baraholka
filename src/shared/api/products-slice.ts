@@ -1,5 +1,14 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
+interface Product {
+  id: number
+  title: string
+  price: string
+  category: string
+  description: string
+  image: string
+}
+
 export const productsSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://fakestoreapi.com',
@@ -7,8 +16,8 @@ export const productsSlice = createApi({
   reducerPath: 'productsApi',
   tagTypes: ['Products'],
   endpoints: (build) => ({
-    getAllProducts: build.query({
-      query: () => '/products',
+    getAllProducts: build.query<Product[], number>({
+      query: (arg) => `/products?limit=${arg}`,
     }),
   }),
 })

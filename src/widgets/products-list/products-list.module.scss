@@ -1,9 +1,7 @@
-.shop {
-    padding-block: 50px;
+.product_list{
     display: grid;
     justify-items: center;
     align-items: center;
     grid-template-columns: repeat(4, 1fr);
     gap: 50px;
-
 }
