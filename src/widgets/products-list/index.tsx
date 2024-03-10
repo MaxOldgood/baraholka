@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useGetAllProductsQuery } from '../../shared/api/products-slice'
+import { Button } from '../../shared/ui/button'
 import { ProductCard } from '../product-card'
 import styles from './products-list.module.scss'
 
@@ -16,7 +17,7 @@ export function ProductsList() {
         allProducts.map((product) => {
           return <ProductCard image={product.image} price={product.price} title={product.title} key={product.id} />
         })}
-      <button onClick={handleMoreButtonClick}>More</button>
+      <Button className={styles.product_list__button} text="Show more" onClick={handleMoreButtonClick} />
     </div>
   )
 }

@@ -4,4 +4,8 @@
     align-items: center;
     grid-template-columns: repeat(4, 1fr);
     gap: 50px;
+
+    &__button {
+        grid-column:1 / -1;
+    }
 }
