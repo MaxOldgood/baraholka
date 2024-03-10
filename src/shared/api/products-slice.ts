@@ -7,6 +7,10 @@ interface Product {
   category: string
   description: string
   image: string
+  raiting: {
+    rate: number
+    count: number
+  }
 }
 
 export const productsSlice = createApi({
@@ -17,7 +21,7 @@ export const productsSlice = createApi({
   tagTypes: ['Products'],
   endpoints: (build) => ({
     getAllProducts: build.query<Product[], number>({
-      query: (arg) => `/products?limit=${arg}`,
+      query: (limit) => `/products?limit=${limit}`,
     }),
   }),
 })
