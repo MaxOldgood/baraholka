@@ -20,8 +20,8 @@ export const productsSlice = createApi({
   reducerPath: 'productsApi',
   tagTypes: ['Products'],
   endpoints: (build) => ({
-    getAllProducts: build.query<Product[], number>({
-      query: (limit) => `/products?limit=${limit}`,
+    getAllProducts: build.query<Product[], number | void>({
+      query: (limit = 0) => `/products?limit=${limit && limit}`,
     }),
   }),
 })

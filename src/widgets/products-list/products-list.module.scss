@@ -4,8 +4,21 @@
     align-items: center;
     grid-template-columns: repeat(4, 1fr);
     gap: 50px;
+    opacity: 0;
+    animation: ani 0.3s forwards;
+    
 
     &__button {
         grid-column:1 / -1;
     }
+
+    &__loader {
+        grid-column:1 / -1;
+
+    }
 }
+
+@keyframes ani {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
