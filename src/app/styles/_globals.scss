@@ -2,10 +2,16 @@
   font-family: var(--font-family-base);
 }
 
+html {
+  scroll-behavior: smooth;
+
+}
+
 
 
 body {
   @include fluid-text(16, 14);
+  
 
   font-weight: 400;
   line-height: 1.28;

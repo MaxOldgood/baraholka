@@ -2,6 +2,22 @@
 
 .logo{
     @include reset-link;
+    user-select: none;
+
+
+    &:hover {
+        background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%);
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textflow 5s linear infinite;
+
+        @keyframes textflow {
+            from {background-position: 0% center}         
+            to {background-position: 200% center}
+          }
+    }
 
     &__text {
         color: rgb(31, 41, 55);
@@ -12,19 +28,26 @@
         justify-content: center;
         align-items: center;
         gap: 5px;
+
+
+        
     
         &::before{
-            content:url('../../assets/icons/logo.svg');
+            content:url('../../assets/icons/logo.svg?react');
             display: inline-block;
             height: 24px;
             width: 24px;
             border-radius: 6px;
+
+  
+
+      
         }
     }
 
-
-
 }
+
+
 
 
 
