@@ -6,6 +6,7 @@
     max-width: 293px;
     background-color: white;
     border-radius: 20px;
+    
 
 
 
@@ -40,8 +41,10 @@
         gap: 10px;
         min-height: 35px;
         background-color: white;
+        
 
         >p{
+            min-width: 0;
             margin: 0;
             overflow: hidden;
             display: -webkit-box;

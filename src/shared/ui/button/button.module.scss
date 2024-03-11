@@ -19,3 +19,18 @@
          box-shadow: -1px 12px 3px -10px var(--color-dark-alt);
     }
 }
+
+.disabled {
+    cursor: auto;
+    color: #a1a1a1;
+    border: 1px solid  #a1a1a1;
+
+
+    @include media.hover {
+        background-color:transparent;
+        color: #a1a1a1;
+        box-shadow: none;
+        
+   }
+    
+}
