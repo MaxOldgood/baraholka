@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useGetAllProductsQuery } from '../../shared/api/products-slice'
 import { Button } from '../../shared/ui/button'
 import { Loader } from '../../shared/ui/loader'

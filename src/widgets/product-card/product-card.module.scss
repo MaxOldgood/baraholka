@@ -4,33 +4,42 @@
 .product_card{
     display: flex;
     flex-direction: column;
-    gap: 12px;
     cursor: pointer;
-    max-width: clamp(250px,20.3vw, 293px);
+    max-width: clamp(270px,20.3vw, 293px);
     background-color: white;
     border-radius: 20px;
+    gap: 0;
     
 
-
-
+    &__image_wrapper{
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5vw;
+        border-radius: 20px;
+    }
 
     &__image {
         background-color: white;
-        min-height: 220px;
         border: none;
         transition: transform 0.2s ease-in-out;
         object-fit: contain;
         object-position: 50% 50%;
         border-radius: 20px;
+        transform: scale(0.8);
 
 
-        &:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 30px -15px var(--color-dark-alt);        }
 
-            @include media.mobile {
-                pointer-events: none;
-            }
+        @include media.hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 30px -15px var(--color-dark-alt);
+
+        }
+
+
+
+
     }
 
     &__header{
