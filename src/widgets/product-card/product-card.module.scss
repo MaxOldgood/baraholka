@@ -29,16 +29,19 @@
         border-radius: 20px;
         transform: scale(0.8);
 
-
-
-        @include media.hover {
-                transform: scale(1.05);
-                box-shadow: 0 0 30px -15px var(--color-dark-alt);
-
+        @include media.mobile {
+            transform: scale(1);
         }
 
 
 
+        @include media.hover {
+            @include media.tablet-above{
+                transform: scale(1.05);
+                box-shadow: 0 0 30px -15px var(--color-dark-alt);
+            }
+
+        }
 
     }
 
