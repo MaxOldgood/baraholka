@@ -1,20 +1,24 @@
+@use '../../app/styles/mixins' as mixins;
+@use '../../app/styles/media' as media;
+
 .product_card{
     display: flex;
     flex-direction: column;
     gap: 12px;
     cursor: pointer;
-    max-width: 293px;
+    max-width: clamp(250px,20.3vw, 293px);
     background-color: white;
     border-radius: 20px;
     
 
 
 
+
     &__image {
         background-color: white;
+        min-height: 220px;
         border: none;
         transition: transform 0.2s ease-in-out;
-        min-width: 293px;
         object-fit: contain;
         object-position: 50% 50%;
         border-radius: 20px;
@@ -23,6 +27,10 @@
         &:hover {
             transform: scale(1.02);
             box-shadow: 0 0 30px -15px var(--color-dark-alt);        }
+
+            @include media.mobile {
+                pointer-events: none;
+            }
     }
 
     &__header{

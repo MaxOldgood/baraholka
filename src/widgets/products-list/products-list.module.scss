@@ -1,3 +1,6 @@
+@use '../../app/styles/mixins' as mixins;
+@use '../../app/styles/media' as media;
+
 .product_list{
     display: grid;
     justify-items: center;
@@ -6,6 +9,30 @@
     gap: 50px;
     opacity: 0;
     animation: ani 0.3s forwards;
+
+    @include media.desktop{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+
+    }
+
+    @include media.tablet{
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    @include media.mobile{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    @include media.mobile-small {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+
+    }
+
+
     
 
     &__button {

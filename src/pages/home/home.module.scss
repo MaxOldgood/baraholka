@@ -1,3 +1,10 @@
+@use '../../app/styles/media' as media;
+
+
 .home {
     padding-block: 50px;
+
+    @include media.mobile{
+        padding-block: 30px;
+    }
 }
