@@ -10,7 +10,7 @@
   --container-padding-x: 20px;
   --transition-duration: 0.2s;
 
-  @include media.mobile {
+  @include media.tablet {
     --container-padding-x: 10px;
   }
 }
