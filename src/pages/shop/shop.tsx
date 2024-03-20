@@ -19,7 +19,7 @@ export function Shop() {
         {isSuccess && filteredProducts?.length === 0 && (
           <p className={styles.shop__not_found}>no products matching filters </p>
         )}
-        {isSuccess && <ProductsList products={filteredProducts} />}
+        {isSuccess && filteredProducts && <ProductsList products={filteredProducts} />}
       </div>
     </div>
   )
