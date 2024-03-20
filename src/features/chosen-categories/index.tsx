@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { Categories, useGetAllCategotiesQuery } from '../../shared/api/products-slice'
+import { useGetAllCategotiesQuery } from '../../shared/api/products-slice'
 import { Checkbox } from '../../shared/ui/checkbox'
 import { Skeleton } from '../../shared/ui/skeleton'
 import { selectedCategoriesChanged } from '../../widgets/filters/filters-slice'
