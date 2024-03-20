@@ -1,5 +1,4 @@
-import { Product } from '../../shared/api/products-slice'
-import { ProductCard } from '../product-card'
+import { ProductCard, type Product } from '../../entities/product'
 import styles from './products-list.module.scss'
 
 interface ProductListProps {
@@ -11,7 +10,7 @@ export function ProductsList(props: ProductListProps) {
   return (
     <div className={`${styles.product_list} container`}>
       {products?.map((product) => {
-        return <ProductCard image={product.images[0]} price={product.price} title={product.title} key={product.id} />
+        return <ProductCard product={product} key={product.id} />
       })}
     </div>
   )

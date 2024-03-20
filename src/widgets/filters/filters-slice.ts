@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Categories } from '../../shared/api/products-slice'
+import { Categories } from '../../shared/api/api-slice'
 
 interface State {
   searchValue: string

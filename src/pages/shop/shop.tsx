@@ -1,5 +1,5 @@
 import { useAppSelector } from '../../app/hooks'
-import { useGetAllProductsQuery } from '../../shared/api/products-slice'
+import { useGetAllProductsQuery } from '../../shared/api/api-slice'
 import { Loader } from '../../shared/ui/loader'
 import { Filters } from '../../widgets/filters'
 import { ProductsList } from '../../widgets/products-list'
