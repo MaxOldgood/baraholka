@@ -4,12 +4,9 @@ import App from './App'
 import './styles/styles.scss'
 import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { About } from '../pages/about/about'
-import { Auth } from '../pages/auth/auth'
 import { Cart } from '../pages/cart/cart'
 import { Details } from '../pages/details/details'
 import { Shop } from '../pages/shop/shop'
-import { User } from '../pages/user/user'
 import { store } from './store'
 
 const container = document.getElementById('root')
@@ -27,24 +24,8 @@ if (container) {
           element: <Shop />,
         },
         {
-          path: '/baraholka/shop',
-          element: <Shop />,
-        },
-        {
-          path: '/baraholka/shop/:productId',
+          path: '/baraholka/product/:productId',
           element: <Details />,
-        },
-        {
-          path: '/baraholka/auth',
-          element: <Auth />,
-        },
-        {
-          path: '/baraholka/about',
-          element: <About />,
-        },
-        {
-          path: '/baraholka/user',
-          element: <User />,
         },
         {
           path: '/baraholka/cart',

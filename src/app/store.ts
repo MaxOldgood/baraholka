@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { productsSlice } from '../shared/api/products-slice'
+import { productsSlice } from '../shared/api/api-slice'
 import filtersReducer from '../widgets/filters/filters-slice'
 
 export const store = configureStore({

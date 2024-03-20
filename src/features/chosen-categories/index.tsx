@@ -1,8 +1,7 @@
 import { ChangeEvent } from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { useGetAllCategotiesQuery } from '../../shared/api/products-slice'
+import { useGetAllCategotiesQuery } from '../../shared/api/api-slice'
 import { Checkbox } from '../../shared/ui/checkbox'
-import { Skeleton } from '../../shared/ui/skeleton'
 import { selectedCategoriesChanged } from '../../widgets/filters/filters-slice'
 import styles from './chosen-categories.module.scss'
 
@@ -28,7 +27,7 @@ export function ChosenCategories(props: ChosenCategoriesProps) {
         {selectedCategories?.length === 0 && <span className={styles.title__hint}>not selected</span>}
       </p>
       <ul className={styles.categories_list}>
-        {isLoading && <Skeleton />}
+        {isLoading && Array(4).fill(<Checkbox checked={false} disabled={true} label={'loading...'} />)}
         {isSuccess &&
           categories.map((category) => {
             const checked = selectedCategories.includes(category)

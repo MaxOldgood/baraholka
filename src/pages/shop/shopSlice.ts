@@ -1,5 +1,5 @@
 import { RootState } from '../../app/store'
-import { productsSlice } from '../../shared/api/products-slice'
+import { productsSlice } from '../../shared/api/api-slice'
 
 export const getFilteredProductsList = (state: RootState) => {
   const filters = state.filters

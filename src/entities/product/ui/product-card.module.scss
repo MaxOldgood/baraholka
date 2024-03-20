@@ -1,5 +1,5 @@
-@use '../../app/styles/mixins' as mixins;
-@use '../../app/styles/media' as media;
+@use '../../../app/styles/mixins' as mixins;
+@use '../../../app/styles/media'  as media;
 
 .product_card{
     display: flex;
@@ -95,15 +95,11 @@
 
    
 
-    &__like {
-        fill: var(--color-dark-alt);
+    &__action {
         width: 20px;
         cursor: pointer;
         flex-shrink: 0;
+        background-color: red;
 
-
-        &:hover {
-            fill: var(--color-dark);
-        }
     }
 }
