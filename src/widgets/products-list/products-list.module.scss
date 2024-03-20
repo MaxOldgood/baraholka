@@ -2,15 +2,19 @@
 @use '../../app/styles/media' as media;
 
 .product_list{
+    border-radius: 20px;
     display: grid;
     justify-items: center;
-    align-items: center;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
+    align-items: start;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    scrollbar-width: 0;
+
 
 
     @include media.desktop{
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 30px;
 
     }

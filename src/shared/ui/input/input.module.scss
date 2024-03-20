@@ -1,0 +1,39 @@
+@use '../../../app/styles/mixins' as mixins;
+
+.input__inner{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.input{
+    position: relative;
+    padding-inline: 15px;
+    padding-block: 10px;
+    border-radius: 20px;
+    outline: none;
+    background-color: #f8f8f8;
+    border: 1px solid #dddbdb;
+    color: var(--color-dark-alt);
+    width: 100%;
+    min-width: 0;
+    box-shadow: 5px 5px 15px -15px var(--color-dark-alt);
+
+    
+    &::placeholder{
+        color: grey;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &:focus{
+        border: 1px solid #b7b5b5;
+    }
+
+    &__label{
+        padding-inline: 15px;
+        color: var(--color-dark);
+    }
+}
+

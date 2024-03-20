@@ -8,7 +8,6 @@ import { About } from '../pages/about/about'
 import { Auth } from '../pages/auth/auth'
 import { Cart } from '../pages/cart/cart'
 import { Details } from '../pages/details/details'
-import { Home } from '../pages/home/home'
 import { Shop } from '../pages/shop/shop'
 import { User } from '../pages/user/user'
 import { store } from './store'
@@ -25,7 +24,7 @@ if (container) {
       children: [
         {
           path: '/baraholka/',
-          element: <Home />,
+          element: <Shop />,
         },
         {
           path: '/baraholka/shop',

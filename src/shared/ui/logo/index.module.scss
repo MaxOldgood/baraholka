@@ -6,6 +6,10 @@
     @include mixins.reset-link;
     user-select: none;
 
+    &:active {
+        transform: scale(0.8);
+    }
+
     @include media.hover {
         
         background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%);
@@ -35,6 +39,7 @@
         gap: 5px;
 
 
+
         
     
         &::before{
@@ -43,6 +48,9 @@
             height: 24px;
             width: 24px;
             border-radius: 6px;
+            
+
+
 
   
 

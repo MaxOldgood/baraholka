@@ -1,28 +1,25 @@
 .loader {
-    position: relative;
-    display: inline-block;
-    width: 80px;
-    height: 80px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-dark);
+  box-shadow: 32px 0 var(--color-dark), -32px 0 var(--color-dark);
+  position: relative;
+  animation: flash 0.5s ease-out infinite alternate;
+}
 
-   &::after {
-    content: " ";
-    display: block;
-    width: 50px;
-    height: 50px;
-    margin: 8px;
-    border-radius: 50%;
-    border: 6px solid var(--color-dark-alt);
-    border-color: var(--color-dark-alt) transparent var(--color-dark-alt) transparent;
-    animation: loader 1s linear infinite;
-    
+@keyframes flash {
+  0% {
+    background-color: #FFF2;
+    box-shadow: 32px 0 #FFF2, -32px 0 #333333;
   }
-
-  @keyframes loader {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  50% {
+    background-color: #0c0c0c;
+    box-shadow: 32px 0 #FFF2, -32px 0 #FFF2;
+  }
+  100% {
+    background-color: #FFF2;
+    box-shadow: 32px 0 #585858, -32px 0 #FFF2;
   }
 }
+      

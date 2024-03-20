@@ -12,12 +12,20 @@
     background-color: transparent;
     border-radius: 10px;
     color: var(--color-dark-alt);
+    justify-content: center;
+    align-items: center;
+
+    &:active{
+        transform: scale(0.7);
+
+    }
 
     @include media.hover {
          background-color: var(--color-dark);
          color: var(--color-light);
-         box-shadow: -1px 12px 3px -10px var(--color-dark-alt);
-    }
+    };
+
+    
 }
 
 .disabled {

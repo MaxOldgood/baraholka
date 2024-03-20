@@ -1,0 +1,60 @@
+
+@use '../../app/styles/media' as media;
+
+.filters {
+    width: 350px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content:start;
+    align-items: start;
+    height: fit-content;
+    position: sticky;
+    top: 0px;
+    transition: 0.4s ease-in-out;
+
+
+    @include media.hover {
+        @include media.tablet-above{
+            box-shadow: 0 0 30px -15px var(--color-dark-alt);
+
+        }
+    }
+
+    &__header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &_title {
+            padding-left: 15px;
+            font-size: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            }
+
+
+
+    }
+
+
+    &__inner{
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 300px;
+        transition: 0.2s ease;
+
+    }
+
+    &__disabled {
+        opacity: 0.7;
+    }
+}

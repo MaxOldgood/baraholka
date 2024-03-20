@@ -1,0 +1,28 @@
+.checkbox__inner{
+    padding-inline: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    color: var(--color-dark-alt);
+    font-weight: 400;
+
+}
+
+
+.checkbox{ 
+    transform: scale(1.2);
+    accent-color: var(--color-dark-alt);
+    padding: 5px;
+    
+    
+
+    &__label{
+
+        
+        &:hover{
+            color: var(--color-dark)
+        }
+    }
+}

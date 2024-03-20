@@ -1,5 +1,51 @@
+@use '../../app/styles/media' as media;
+
+
 .shop {
-    padding-block: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    @include media.mobile{
+    }
+
+    &__content{
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        align-items: start;
+        gap: 30px;
+    }
+
+    &__loader{
+        margin-top: 150px;
+       
+    }
+
+    &__not_found {
+        padding-top: 150px;
+        padding-left: 50px;
+        width: 100%;
+        text-align: center;
+        color: var(--color-dark);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 30px;
+
+        background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%);
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textflow 3s linear infinite;
 
 
+        @keyframes textflow {
+            from {background-position: 0% center}         
+            to {background-position: 200% center}
+          }
+
+ 
+        
+  
+    }
 }

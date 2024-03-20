@@ -10,16 +10,41 @@
 
   &__header {
     background-color: white;
-    min-height: 72px;
+    height: 50px;
     display: flex;    
     justify-content: center;
     align-items: center;
 
     width:100vw;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border: 1px solid #dddbdb;
+
 
   }
 
   &__content {
+    padding-top: 50px;
+    padding-bottom: 30px;
     flex-grow: 1;
-  }
+    width: 100vw;
+    height: 100svh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+  
+    &::-webkit-scrollbar {
+      width: 5px; /* Ширина всего элемента навигации */
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: transparent; /* Цвет дорожки */
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-dark-alt); /* Цвет бегунка */
+      border-radius: 20px; /* Округление бегунка */
+    }
+    }
 }
