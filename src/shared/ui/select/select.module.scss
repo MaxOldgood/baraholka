@@ -1,0 +1,30 @@
+.select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-dark);
+    font-size: 14px;
+
+    &__label {
+        font-size: 16px;
+    }
+
+
+    &__body{
+        width: 80px;
+        border: none;
+        outline: none;
+        background-color: var(--color-dark);
+        padding-inline: 10px;
+        padding-block: 5px;
+        border-radius: 8px;
+        color: white;
+
+
+
+            
+
+        
+    }
+}
