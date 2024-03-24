@@ -1,4 +1,6 @@
 @use '../../app/styles/media' as media;
+@use '../../app/styles/mixins' as mixins;
+
 
 
 .shop {
@@ -6,8 +8,15 @@
     justify-content: space-between;
     gap: 30px;
 
-    @include media.mobile{
+    @include media.desktop{
+        gap: 20px;
     }
+
+    @include media.mobile{
+        flex-direction: column;
+        justify-content: start;
+    }
+
 
     &__content{
         display: flex;
@@ -16,6 +25,8 @@
         justify-content: start;
         align-items: center;
         gap: 0px;
+
+
     }
 
     &__loader{
@@ -45,9 +56,27 @@
             from {background-position: 0% center}         
             to {background-position: 200% center}
           }
-
- 
-        
-  
     }
+
+
+
 }
+
+.overlay {
+    @include mixins.abs-center;
+    z-index: 80;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 2.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+
+
+
+
+

@@ -8,9 +8,10 @@
     display: grid;
     justify-items: center;
     align-items: start;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    padding-block: 40px;
+    padding-block: 20px;
+    padding-inline: 40px;
 
     overflow-y: scroll;
   
@@ -28,27 +29,39 @@
       }
 
 
+      @include media.desktop-above{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        padding-block: 20px;
+        padding-inline: 5px;
+
+    }
 
 
     @include media.desktop{
         grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+        gap: 20px;
+        padding-block: 20px;
+        padding-inline: 10px;
 
     }
 
     @include media.tablet{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
 
     }
 
     @include media.mobile{
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        padding-block: 10px;
     }
 
     @include media.mobile-small {
         grid-template-columns: repeat(1, 1fr);
-        gap: 30px;
+        gap: 10px;
+        padding-inline: 10px;
+
 
     }
 

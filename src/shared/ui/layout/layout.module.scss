@@ -1,3 +1,5 @@
+@use '../../../app/styles/media' as media;
+
 .layout {
   overflow-x: hidden;
   display: flex;
@@ -9,8 +11,9 @@
   background-color: #f5f5f5;
 
   &__header {
+    box-sizing: border-box;
     background-color: white;
-    height: 50px;
+    min-height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,19 +21,26 @@
     width: 100vw;
     position: sticky;
     top: 0;
-    z-index: 10;
-    border: 1px solid #dddbdb;
+    z-index: 90;
+    box-shadow: 0px 5px 15px -15px var(--color-dark-alt);
+
+    // border: 1px solid #dddbdb;
 
 
   }
 
   &__content {
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 10px;
     flex-grow: 1;
     width: 100vw;
     overflow-x: hidden;
     overflow-y: hidden;
+
+    @include media.mobile {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
 
 
 

@@ -17,7 +17,7 @@ export function ProductsList(props: ProductListProps) {
   )
 
   return (
-    <div className={`${styles.product_list} container`}>
+    <div className={`${styles.product_list} `}>
       {products?.map((product) => {
         return <ProductCard product={product} key={product.id} />
       })}
