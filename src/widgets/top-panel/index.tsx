@@ -21,7 +21,7 @@ export function TopPanel(props: TopPanelProps) {
   return (
     <div className={styles.top_panel}>
       <Button text="Filters" className={`${styles.filters_button} visible-mobile`} onClick={showFilters} />
-      {productsNumber && <p className={`${styles.products_number} hidden-mobile`}>Found {productsNumber} products</p>}
+      {<p className={`${styles.products_number} hidden-mobile`}>Found {productsNumber} products</p>}
       <Sort disabled={disabled} />
     </div>
   )

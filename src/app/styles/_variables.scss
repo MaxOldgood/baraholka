@@ -10,27 +10,23 @@
   --container-padding-x: 20px;
   --transition-duration: 0.2s;
 
+  @include media.desktop {
+    --container-width: 1040px;
+  }
+
   @include media.tablet {
     --container-padding-x: 10px;
-  }
+    --container-width: 768px;
 
-  @include media.desktop {
-    --container-width: 1040px
-  }
-
-  @include media.tablet {
-    --container-width: 768px
   }
 
   @include media.mobile {
+    --container-width: 425px;
     --container-padding-x: 5px;
-    --container-width: 420px
 
   }
 
-  @include media.mobile-small {
-    --container-padding-x: 5px;
-    --container-width: 320px
 
-  }
+
+
 }
