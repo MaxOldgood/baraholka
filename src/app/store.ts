@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
+import sortReducer from '../features/sort/sort-slice'
 import { productsSlice } from '../shared/api/api-slice'
 import filtersReducer from '../widgets/filters/filters-slice'
-import sortReducer from '../widgets/sort/sort-slice'
 
 export const store = configureStore({
   reducer: {

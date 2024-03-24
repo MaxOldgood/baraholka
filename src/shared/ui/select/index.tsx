@@ -1,5 +1,5 @@
 import { ChangeEvent } from 'react'
-import { type sortBy } from '../../../widgets/sort/sort-slice'
+import { type sortBy } from '../../../features/sort/sort-slice'
 import styles from './select.module.scss'
 
 interface SelectProps {
