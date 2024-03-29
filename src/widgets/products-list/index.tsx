@@ -26,7 +26,7 @@ export function ProductsList(props: ProductListProps) {
       {products?.map((product: Product) => {
         return (
           <ProductCard
-            className={cartProducts.find((cartProduct) => cartProduct.id === product.id) && 'selected'}
+            className={cartProducts.find((cartProduct) => cartProduct.id === product.id) ? 'selected' : ''}
             product={product}
             key={product.id}
             actionSlot={
