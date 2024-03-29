@@ -6,22 +6,27 @@
   --color-accent: #0FF7FD;
 
   --font-family-base: 'Work-Sans', sans-serif;
-  --container-width: 1440px;
+  --container-width: clamp(315px, 1440vw, 1440px)
   --container-padding-x: 20px;
   --transition-duration: 0.2s;
 
-  @include media.desktop {
-    --container-width: 1040px;
-  }
 
-  @include media.tablet {
-    --container-padding-x: 10px;
-    --container-width: 768px;
 
-  }
+  // @include media.tablet {
+  //   --container-padding-x: 10px;
+  //   --container-width: 768px;
+
+  // }
 
   @include media.mobile {
     --container-width: 425px;
+    --container-padding-x: 10px;
+
+  }
+
+  
+  @include media.mobile-small {
+    --container-width: 310px;
     --container-padding-x: 5px;
 
   }

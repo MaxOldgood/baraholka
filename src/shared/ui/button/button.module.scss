@@ -33,6 +33,13 @@
     color: #a1a1a1;
     border: 1px solid  #a1a1a1;
 
+    &:active{
+        transform: scale(1);
+
+    }
+
+    
+
 
     @include media.hover {
         background-color:transparent;

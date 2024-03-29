@@ -64,7 +64,7 @@
 
 .overlay {
     @include mixins.abs-center;
-    z-index: 80;
+    z-index: 90;
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.4);

@@ -11,7 +11,6 @@ export function Layout({ header }: LayoutProps) {
     <div className={classes.layout}>
       <div className={classes.layout__header}>{header}</div>
       <div className={`${classes.layout__content}`}>
-        {' '}
         <Outlet />
       </div>
     </div>

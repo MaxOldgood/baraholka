@@ -2,12 +2,12 @@
 @use '../../app/styles/media' as media;
 
 .product_list{
-    height: calc(100svh - 130px);
+    max-height: calc(100svh - 130px);
     width: 100%;
     border-radius: 20px;
     display: grid;
     justify-items: center;
-    align-items: start;
+    align-items: center;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     padding-block: 20px;
@@ -48,6 +48,9 @@
 
     @include media.tablet{
         grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        max-height: 100%;
 
     }
 
@@ -61,6 +64,8 @@
         grid-template-columns: repeat(1, 1fr);
         gap: 10px;
         padding-inline: 10px;
+        justify-content: center;
+        align-items: center;
 
 
     }
@@ -74,6 +79,27 @@
 
     &__loader {
         grid-column:1 / -1;
+    }
+}
+
+.counter{
+    background-color: var(--color-dark-alt);
+    padding-inline: 5px;
+    gap: 0px;
+    color: var(--color-light);
+    font-size: 14px;
+    font-weight: 500;
+    &:hover {
+        background-color: var(--color-dark);
+        color: var(--color-light);
+
+        
 
     }
+
+    & >button{
+        color: var(--color-light);
+    }
+
+
 }

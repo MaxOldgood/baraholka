@@ -1,0 +1,115 @@
+@use '../../app/styles/media' as media;
+@use '../../app/styles/mixins' as mixins;
+
+
+.container {
+    background-color: white;
+    border-radius: 15px;
+    width: 100%;
+    max-height: 75vh;
+    overflow-y: scroll;
+    padding-block: 15px;
+    padding-inline: 15px;
+    box-shadow: 0 0 30px -15px var(--color-dark-alt);
+
+
+
+    &::-webkit-scrollbar {
+        width: 5px; /* Ширина всего элемента навигации */
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: transparent; /* Цвет дорожки */
+        border-radius: 20px;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--color-dark-alt); /* Цвет бегунка */
+        border-radius: 20px; /* Округление бегунка */
+      }
+
+    @include media.tablet {
+      max-height: fit-content;
+    }
+
+    @include media.mobile {
+      &::-webkit-scrollbar {
+        width: 0px; /* Ширина всего элемента навигации */
+      }
+  }
+
+    @include media.mobile-small {
+      padding-block: 8px;
+      padding-inline: 5px;
+  }
+
+
+
+
+}
+
+.message{
+  position: relative;
+  background-color: white;
+  border-radius: 15px;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  box-shadow: 0 0 30px -15px var(--color-dark-alt);
+
+  @include media.desktop {
+    height: 25vw;
+  } 
+
+
+
+  &__image_wrapper {
+    height: 100%;
+    width: auto;
+  }
+
+  &__image{
+   height: 100%;
+   border-top-left-radius: 15px;
+   border-bottom-left-radius: 15px;
+
+  @include media.tablet {
+display: none;
+
+    
+   
+  } 
+  }
+
+  &__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-color: white;
+    padding-block: 20px;
+    gap: 10px;
+    border-radius: 15px;
+
+
+  }
+
+  &__text {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+
+
+
+
+.product_list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

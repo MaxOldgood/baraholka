@@ -1,0 +1,53 @@
+@use '../../app/styles/media' as media;
+@use '../../app/styles/mixins' as mixins;
+
+
+
+.cart{
+    display: flex;
+    flex-direction: column;
+    padding-inline: 20px;
+
+
+
+    @include media.tablet {
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+    &__title{
+        padding: 0;
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 50px;
+
+        @include media.mobile {
+            font-size: 35px;
+            padding-top: 15px;
+        }
+        
+    }
+
+    &__inner{
+        padding-block: 20px;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 50px;
+        justify-content: center;
+
+        @include media.desktop {
+            gap: 20px;
+        }
+    
+
+        @include media.tablet {
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+        }
+
+
+    }
+}

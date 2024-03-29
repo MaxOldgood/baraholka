@@ -31,16 +31,32 @@
 
   &__content {
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     flex-grow: 1;
     width: 100vw;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: scroll;
 
-    @include media.mobile {
+    &::-webkit-scrollbar {
+      width: 5px; /* Ширина всего элемента навигации */
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: transparent; /* Цвет дорожки */
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-dark-alt); /* Цвет бегунка */
+      border-radius: 20px; /* Округление бегунка */
+    }
+
+    @include media.tablet {
       padding-top: 5px;
       padding-bottom: 5px;
     }
+
+
+
 
 
 

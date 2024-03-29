@@ -5,13 +5,16 @@
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    width: clamp(195px,16vw, 240px);
+    // width: clamp(195px,16vw, 240px);
     background-color: white;
     border-radius: 20px;
-
-
+    color: var(--color-dark-alt);
     gap: 0;
-    transition: 0.4s ease-in-out;
+
+    @include media.mobile-small {
+        flex-direction: row;
+        max-width: 290px;
+    }
 
 
     @include media.hover {
@@ -28,13 +31,22 @@
     }
 
     &__image_wrapper{
-        height: clamp(195px,18vw, 200px);
+        height: 195px;
+        width: 195px;
         background-color: white;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: clamp(10px, 1.2vw, 20px);
+        padding: 10px;
         border-radius: 20px;
+        margin: 0 auto;
+
+        
+    @include media.mobile-small {
+        width: 120px;
+        height: 120px;
+        padding: 5px;
+    }
     }
 
     &__image {
@@ -46,45 +58,49 @@
         width: 100%;
         object-position: 50% 50%;
         transform: scale(0.85);
-
-        @include media.mobile {
-            transform: scale(1);
-        }
-
-
+        border-radius: 20px;
 
         @include media.hover {
             @include media.tablet-above{
-                transform: scale(1.05);
-
-
+                transform: scale(1);
             }
-
         }
 
     }
 
     &__header{
+        width: clamp(195px,16vw, 240px);
         height: 90px;
-        padding-inline: 10px;
+        padding-inline: 20px;
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
         padding-bottom: 10px;
+
+        
+    @include media.mobile-small {
+        height: 120px;
+       padding-inline:10px;
+       padding-block: 10px;
+       justify-content: space-between;
+    }
     }
     
     &__title {
+        padding: 0;
+        margin: 0;
         color: var(--color-dark-alt);
         display: flex;
         justify-content: space-between;
         align-items: start;
         gap: 10px;
-        min-height: 35px;
+        min-height: 41px;
         background-color: white;
         
 
         >p{
             min-width: 0;
+            padding: 0;
             margin: 0;
             overflow: hidden;
             display: -webkit-box;
@@ -94,13 +110,34 @@
 
     }
 
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 28px;
+    }
+
+    &__price {
+        padding: 0;
+        margin: 0;
+        font-weight: 500;
+    }
+
    
 
     &__action {
-        width: 20px;
         cursor: pointer;
         flex-shrink: 0;
-        background-color: red;
+
 
     }
+}
+
+.selected {
+    &>*div>p{
+        color: var(--color-dark);
+        font-weight: 700;
+
+    }
+    
 }

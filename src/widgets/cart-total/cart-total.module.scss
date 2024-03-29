@@ -1,0 +1,70 @@
+@use '../../app/styles/media' as media;
+
+.cart_total{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    min-height: 341px;
+    margin-left: auto;
+    box-shadow: 0 0 30px -15px var(--color-dark-alt);
+
+
+
+    &__title {
+        margin: 0 auto;
+        padding: 0;
+        text-transform: capitalize;
+        font-size: 25px;
+        color: var(--color-dark);
+    }
+
+    &__checkout_button {
+        width: fit-content;
+        margin: 0 auto;
+        background-color: var(--color-dark);
+        color: white;
+
+        @include media.hover {
+            box-shadow: 0 15px 30px -15px var(--color-dark);
+
+       };
+
+
+        
+    }
+}
+
+
+.string {
+    padding-inline: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__text {
+        color: var(--color-dark-alt);
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+    }
+
+    &__sum {
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        font-weight:500;
+    }
+}
+
+
+.divider {
+    border: 1px solid #eceaea;
+    outline: none;
+    width: 100%;
+    padding-inline: 0px;
+}
+

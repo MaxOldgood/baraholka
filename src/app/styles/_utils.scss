@@ -4,6 +4,32 @@
     max-width: calc(var(--container-width) + var(--container-padding-x)*2);
     margin-inline: auto;
     padding-inline: var(--container-padding-x);
+
+    @include media.desktop-above {
+        max-width: 1440px;
+      }
+
+    @include media.desktop {
+        max-width: clamp(315px, 93vw, 1440px);
+      }
+
+    @include media.tablet {
+        max-width: clamp(315px, 95vw, 768px);
+      }
+
+    @include media.mobile {
+        max-width: 425px;
+        padding-inline: 5px;
+    
+      }
+
+      @include media.mobile-small {
+        max-width: 320px;
+        padding-inline: 5px;
+    
+      }
+
+
 }
 
 .visually-hidden {

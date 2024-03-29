@@ -1,0 +1,30 @@
+@use '../../app/styles/media' as media;
+@use '../../app/styles/mixins' as mixins;
+
+
+.button {
+
+    @include mixins.reset-button;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    &:active{
+        transform: scale(1.3);
+    }
+
+    
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--color-dark-alt);
+
+    @include media.hover{
+        fill: var(--color-dark);
+    }
+
+
+}
