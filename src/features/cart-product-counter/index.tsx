@@ -1,10 +1,11 @@
+import { MouseEvent } from 'react'
 import { useAppDispatch } from '../../app/hooks'
 import { decrementCount, deleteProduct, incrementCount } from '../../entities/cart/model/cart-slice'
-import { type Product } from '../../entities/product'
+import { type CartProduct } from '../../entities/product/model/types'
 import styles from './cart-product-counter.module.scss'
 
 interface CartProductCounterProps {
-  product: Product
+  product: CartProduct
   deleteIfZero?: boolean
   className?: string
 }
@@ -15,7 +16,7 @@ export function CartProductCounter(props: CartProductCounterProps) {
 
   const dispatch = useAppDispatch()
 
-  function handleDivClick(e) {
+  function handleDivClick(e: MouseEvent<HTMLDivElement>) {
     e.preventDefault()
   }
 

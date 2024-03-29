@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { CartProduct } from '../../product/model/types'
 
-const initialState = {
+interface CartState {
+  products: CartProduct[]
+}
+
+const initialState: CartState = {
   products: [],
 }
 
@@ -9,16 +14,18 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addProduct(state, action) {
-      state.products.find((product) => product.id === action.payload.id) ? null : state.products.push(action.payload)
+      state.products.find((product: CartProduct) => product.id === action.payload.id)
+        ? null
+        : state.products.push(action.payload)
     },
     incrementCount(state, action) {
-      state.products.map((product) => (product.id === action.payload ? product.count++ : product))
+      state.products.map((product: CartProduct) => (product.id === action.payload ? product.count++ : product))
     },
     decrementCount(state, action) {
-      state.products.map((product) => (product.id === action.payload ? product.count-- : product))
+      state.products.map((product: CartProduct) => (product.id === action.payload ? product.count-- : product))
     },
     deleteProduct(state, action) {
-      state.products = state.products.filter((product) => product.id !== action.payload)
+      state.products = state.products.filter((product: CartProduct) => product.id !== action.payload)
     },
   },
 })

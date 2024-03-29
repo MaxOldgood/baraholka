@@ -1,14 +1,20 @@
+import { MouseEvent } from 'react'
 import { useAppDispatch } from '../../app/hooks'
 import { addProduct } from '../../entities/cart/model/cart-slice'
+import { Product } from '../../entities/product'
 import AddToCartIcon from '../../shared/assets/icons/add-to-cart.svg?react'
 import styles from './add-to-cart.module.scss'
 
-export function AddToCart(props) {
+interface AddToCartProps {
+  product: Product
+}
+
+export function AddToCart(props: AddToCartProps) {
   const { product } = props
 
   const dispatch = useAppDispatch()
 
-  function handleClick(e) {
+  function handleClick(e: MouseEvent) {
     e.preventDefault()
     dispatch(addProduct({ ...product, count: 1 }))
   }
