@@ -3,26 +3,30 @@ import { useAppDispatch } from '../../app/hooks'
 import { addProduct } from '../../entities/cart/model/cart-slice'
 import { Product } from '../../entities/product'
 import AddToCartIcon from '../../shared/assets/icons/add-to-cart.svg?react'
+import { Button } from '../../shared/ui/button'
 import styles from './add-to-cart.module.scss'
 
 interface AddToCartProps {
   product: Product
+  variant?: 'icon' | 'text'
 }
 
 export function AddToCart(props: AddToCartProps) {
-  const { product } = props
+  const { product, variant = 'icon' } = props
 
   const dispatch = useAppDispatch()
 
-  function handleClick(e: MouseEvent) {
+  function handleClick(e: MouseEvent<HTMLButtonElement>) {
     e.preventDefault()
     e.stopPropagation()
     dispatch(addProduct({ ...product, count: 1 }))
   }
 
-  return (
-    <button title="add to cart" className={styles.button} onClick={handleClick}>
-      <AddToCartIcon className={styles.icon} />
-    </button>
-  )
+  if (variant === 'icon') {
+    return (
+      <button title="add to cart" className={styles.button} onClick={handleClick}>
+        <AddToCartIcon className={styles.icon} />
+      </button>
+    )
+  } else return <Button text="add to cart" onClick={handleClick} />
 }
