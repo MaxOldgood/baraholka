@@ -3,7 +3,12 @@ import { CartProduct } from '../../entities/product/model/types'
 import { Button } from '../../shared/ui/button'
 import styles from './cart-total.module.scss'
 
-export function CartTotal() {
+interface CartTotalProps {
+  className?: string
+}
+
+export function CartTotal(props: CartTotalProps) {
+  const { className = '' } = props
   const products = useAppSelector((state) => state.cart.products)
 
   const sum = parseFloat(
@@ -17,7 +22,7 @@ export function CartTotal() {
   const total = parseFloat((sum - discount + deliveryFee).toFixed(2))
 
   return (
-    <div className={`${styles.cart_total} ${products.length === 0 && styles.disabled} container`}>
+    <div className={`${styles.cart_total} ${products.length === 0 && styles.disabled} ${className} container`}>
       <h3 className={styles.cart_total__title}>Order summary</h3>
       <hr className={styles.divider} />
       <CartTotalString text={'Subtotal'} sum={sum.toFixed(2)} />

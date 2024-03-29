@@ -8,14 +8,25 @@
     justify-content: center;
     align-items: center;
 
-    &__logo{
-        flex-grow: 1;
-    }
-
     @include media.mobile{
-        grid-template-columns: 1fr auto 1fr;
+        justify-content: space-around;
 
     }
+
+    &__logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+
+        @include media.mobile{
+            justify-content: space-between;
+            flex-grow: 0;
+    
+        }
+    }
+
+
 
 
     &__icons {

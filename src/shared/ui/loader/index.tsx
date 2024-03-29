@@ -1,7 +1,7 @@
 import styles from './loader.module.scss'
 
 interface LoaderProps {
-  className: string
+  className?: string
 }
 
 export function Loader(props: LoaderProps) {

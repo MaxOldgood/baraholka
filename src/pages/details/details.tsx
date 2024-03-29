@@ -4,12 +4,13 @@ import { CartProduct } from '../../entities/product/model/types'
 import { AddToCart } from '../../features/add-to-cart'
 import { CartProductCounter } from '../../features/cart-product-counter'
 import { useGetProductByIdQuery, useGetProductsByCategoryQuery } from '../../shared/api/api-slice'
+import { Loader } from '../../shared/ui/loader'
 import { ProductsList } from '../../widgets/products-list'
 import styles from './details.module.scss'
 
 export function Details() {
   const { productId } = useParams()
-  const { data: product, isSuccess: isGetProductSuccess } = useGetProductByIdQuery(productId)
+  const { data: product, isSuccess: isGetProductSuccess, isLoading } = useGetProductByIdQuery(productId)
   const cartProducts: CartProduct[] = useAppSelector((state) => state.cart.products)
   const { data: thisCategoryProductsData, isSuccess: isGetCategoryProductsSuccess } = useGetProductsByCategoryQuery(
     product?.category,
@@ -19,6 +20,7 @@ export function Details() {
 
   return (
     <div className={`${styles.details} `}>
+      {isLoading && <Loader />}
       {isGetProductSuccess && (
         <div className={`${styles.details__inner} container`}>
           <div className={styles.details__image_wrapper}>
@@ -45,7 +47,7 @@ export function Details() {
           </div>
         </div>
       )}
-      {isGetCategoryProductsSuccess && (
+      {isGetProductSuccess && isGetCategoryProductsSuccess && (
         <div className={styles.details__more}>
           <h2 className={styles.details__more_title}>You might also like</h2>
           <div className={styles.details__More_list}>
