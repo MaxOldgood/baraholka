@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { Product } from '../../entities/product'
+import { CategoryProduct, CategoryProductList } from '../../entities/product/model/types'
 
 interface ProductsResponse {
   products: Product[]
@@ -43,7 +44,18 @@ export const productsSlice = createApi({
             category === 'lighting',
         ),
     }),
+    getProductById: build.query<Product, string | undefined>({
+      query: (id) => `/products/${id}`,
+    }),
+    getProductsByCategory: build.query<CategoryProductList, string | undefined>({
+      query: (category) => `/products/category/${category}`,
+    }),
   }),
 })
 
-export const { useGetAllProductsQuery, useGetAllCategotiesQuery } = productsSlice
+export const {
+  useGetAllProductsQuery,
+  useGetAllCategotiesQuery,
+  useGetProductByIdQuery,
+  useGetProductsByCategoryQuery,
+} = productsSlice

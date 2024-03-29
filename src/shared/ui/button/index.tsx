@@ -1,9 +1,10 @@
+import { MouseEvent, MouseEventHandler } from 'react'
 import styles from './button.module.scss'
 
 interface ButtonProps {
   text: string
   className?: string
-  onClick?: () => void
+  onClick?: MouseEventHandler<HTMLButtonElement>
   disabled?: boolean
 }
 

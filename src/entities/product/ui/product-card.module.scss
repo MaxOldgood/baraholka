@@ -2,7 +2,6 @@
 @use '../../../app/styles/media'  as media;
 
 .product_card{
-
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -11,6 +10,8 @@
     border-radius: 20px;
     color: var(--color-dark-alt);
     gap: 0;
+
+    
 
     @include media.mobile-small {
         flex-direction: row;
