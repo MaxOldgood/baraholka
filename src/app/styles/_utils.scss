@@ -7,14 +7,17 @@
 
     @include media.desktop-above {
         max-width: 1440px;
+        padding-inline: 30px;
       }
 
     @include media.desktop {
-        max-width: clamp(315px, 93vw, 1440px);
+        max-width: clamp(315px, 93vw, 1280px);
+        padding-inline: 20px;
       }
 
     @include media.tablet {
         max-width: clamp(315px, 95vw, 768px);
+        padding-inline: 10px;
       }
 
     @include media.mobile {
