@@ -3,7 +3,11 @@ import { deleteProduct } from '../../entities/cart/model/cart-slice'
 import DeleteIcon from '../../shared/assets/icons/delete.svg?react'
 import styles from './delete-from-cart.module.scss'
 
-export function DeleteFromCart(props) {
+interface DeleteFromCartProps {
+  productId: number
+}
+
+export function DeleteFromCart(props: DeleteFromCartProps) {
   const { productId } = props
   const dispatch = useAppDispatch()
   function handleClick() {
