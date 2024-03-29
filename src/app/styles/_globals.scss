@@ -2,7 +2,14 @@
   font-family: var(--font-family-base);
 }
 
+
+
 html {
+
+  &*{
+    -webkit-tap-highlight-color: transparent;
+  }
+
   scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
