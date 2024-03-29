@@ -16,6 +16,7 @@ export function AddToCart(props: AddToCartProps) {
 
   function handleClick(e: MouseEvent) {
     e.preventDefault()
+    e.stopPropagation()
     dispatch(addProduct({ ...product, count: 1 }))
   }
 

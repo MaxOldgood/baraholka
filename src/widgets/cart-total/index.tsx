@@ -17,7 +17,7 @@ export function CartTotal() {
   const total = parseFloat((sum - discount + deliveryFee).toFixed(2))
 
   return (
-    <div className={`${styles.cart_total} ${products.length === 0 && styles.disabled}`}>
+    <div className={`${styles.cart_total} ${products.length === 0 && styles.disabled} container`}>
       <h3 className={styles.cart_total__title}>Order summary</h3>
       <hr className={styles.divider} />
       <CartTotalString text={'Subtotal'} sum={sum.toFixed(2)} />

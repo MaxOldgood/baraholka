@@ -18,6 +18,7 @@ export function CartProductCounter(props: CartProductCounterProps) {
 
   function handleDivClick(e: MouseEvent<HTMLDivElement>) {
     e.preventDefault()
+    e.stopPropagation()
   }
 
   function handleIncrementButtonClick() {
