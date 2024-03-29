@@ -29,7 +29,7 @@ body,
    Убираем внешние отступы вертикали нужным тегам,
    у которых есть атрибут class
   */
-:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl) {
   margin-block: 0;
 }
 
@@ -57,18 +57,15 @@ body,
    чтобы избежать взаимодействие с более сложным селектором
   */
 p {
-  --paragraphMarginBottom: 24px;
-
-  margin-block: 0;
+  margin:0;
+  padding: 0;
 }
 
 /**
    Внешний отступ вниз для параграфа без атрибута class,
    который расположен не последним среди своих соседних элементов
   */
-p:where(:not([class]):not(:last-child)) {
-  margin-bottom: var(--paragraphMarginBottom);
-}
+
 
 /**
    Упрощаем работу с изображениями
