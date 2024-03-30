@@ -18,6 +18,18 @@ export function Shop() {
     dispatch(hideFiltersMobile())
   }
 
+  // Функция устанавливает динамическую высоту видимой области
+  function setViewportProperty() {
+    let vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+  }
+
+  // Реагируем на изменение размеров экрана
+  window.addEventListener('resize', setViewportProperty)
+
+  // Выполняем инициализацию
+  setViewportProperty()
+
   return (
     <div className={`${styles.shop} container`}>
       <Filters
