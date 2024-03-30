@@ -1,6 +1,8 @@
 @use '../../../app/styles/media' as media;
 
 .layout {
+
+
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -8,6 +10,7 @@
 
   height: 100dvh;
   width: 100vw;
+  overflow-y: scroll;
   background-color: #f5f5f5;
 
   &__header {
@@ -35,7 +38,7 @@
     flex-grow: 1;
     width: 100vw;
     overflow-x: hidden;
-    overflow-y: scroll;
+    height: auto;
 
     &::-webkit-scrollbar {
       width: 5px; /* Ширина всего элемента навигации */
