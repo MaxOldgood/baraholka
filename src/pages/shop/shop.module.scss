@@ -57,9 +57,6 @@
             to {background-position: 200% center}
           }
     }
-
-
-
 }
 
 .overlay {
@@ -67,7 +64,6 @@
     z-index: 90;
     width: 100vw;
     height:100vh; /* Надёжный вариант в качестве резервного */
-    height: -webkit-fill-available; /* Специально для Safari */
     min-height: calc(var(--vh, 1vh) * 100);
 
 
