@@ -2,13 +2,15 @@
 
 .layout {
 
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   justify-content: start;
+  position: fixed;
   height: 100%;
   width: 100vw;
   overflow-y: scroll;
+  overflow-x: hidden;
+
   background-color: #f5f5f5;
 
   &__header {
