@@ -18,6 +18,10 @@ export function Shop() {
     dispatch(hideFiltersMobile())
   }
 
+  const overlay = document.getElementById('#overlay')
+  let vh = window.innerHeight * 0.01
+  overlay?.style.setProperty('--vh', `${vh}px`)
+
   return (
     <div className={`${styles.shop} container`}>
       <Filters
@@ -37,6 +41,7 @@ export function Shop() {
         {isSuccess && filteredProducts && <ProductsList products={filteredProducts} />}
       </div>
       <div
+        id="overlay"
         className={`${styles.overlay} visible-mobile ${!filtersOpen && 'visually-hidden'}`}
         onClick={hideFilters}
       ></div>
