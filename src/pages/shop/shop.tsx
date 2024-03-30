@@ -37,7 +37,6 @@ export function Shop() {
         {isSuccess && filteredProducts && <ProductsList products={filteredProducts} />}
       </div>
       <div
-        id="overlay"
         className={`${styles.overlay} visible-mobile ${!filtersOpen && 'visually-hidden'}`}
         onClick={hideFilters}
       ></div>
