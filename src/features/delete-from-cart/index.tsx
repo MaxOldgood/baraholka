@@ -1,3 +1,4 @@
+import { MouseEvent } from 'react'
 import { useAppDispatch } from '../../app/hooks'
 import { deleteProduct } from '../../entities/cart/model/cart-slice'
 import DeleteIcon from '../../shared/assets/icons/delete.svg?react'
@@ -10,7 +11,8 @@ interface DeleteFromCartProps {
 export function DeleteFromCart(props: DeleteFromCartProps) {
   const { productId } = props
   const dispatch = useAppDispatch()
-  function handleClick() {
+  function handleClick(e: MouseEvent) {
+    e.preventDefault()
     dispatch(deleteProduct(productId))
   }
   return (

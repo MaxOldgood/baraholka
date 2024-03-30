@@ -13,7 +13,7 @@ export function ProductCard(props: ProductCardProps) {
   const { product, actionSlot, className } = props
   const { title, price, images } = product
   return (
-    <Link to={`product/${product.id}`}>
+    <Link to={`/baraholka/product/${product.id}`}>
       <div className={`${styles.product_card} ${styles[className]}`}>
         <div className={styles.product_card__image_wrapper}>
           <img className={styles.product_card__image} src={images[0]} alt={title} loading="lazy" />
