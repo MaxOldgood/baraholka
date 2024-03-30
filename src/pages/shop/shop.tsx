@@ -18,12 +18,6 @@ export function Shop() {
     dispatch(hideFiltersMobile())
   }
 
-  window.addEventListener('resize', () => {
-    const overlay = document.getElementById('#overlay')
-    let vh = window.innerHeight * 0.01
-    document.documentElement.style.setProperty('--vh', `${vh}px`)
-  })
-
   return (
     <div className={`${styles.shop} container`}>
       <Filters
