@@ -2,6 +2,7 @@
 @use '../../app/styles/media' as media;
 
 .product_list{
+    overflow-y: hidden;
     // max-height: calc(100svh - 140px);
     width: 100%;
     border-radius: 20px;
@@ -13,19 +14,7 @@
     padding-block: 20px;
     padding-inline: 40px;
 
-  
-    &::-webkit-scrollbar {
-        width: 5px; /* Ширина всего элемента навигации */
-      }
-      
-      &::-webkit-scrollbar-track {
-        background: transparent; /* Цвет дорожки */
-      }
-      
-      &::-webkit-scrollbar-thumb {
-        background-color: var(--color-dark-alt); /* Цвет бегунка */
-        border-radius: 20px; /* Округление бегунка */
-      }
+
 
 
       @include media.desktop-above{
@@ -49,7 +38,6 @@
         grid-template-columns: repeat(2, 1fr);
         justify-content: center;
         align-items: center;
-        max-height: 100%;
 
     }
 

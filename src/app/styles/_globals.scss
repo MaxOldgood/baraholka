@@ -12,20 +12,6 @@ html {
 
   scroll-behavior: smooth;
 
-  &::-webkit-scrollbar {
-    width: 5px; /* Ширина всего элемента навигации */
-  }
-  
-  &::-webkit-scrollbar-track {
-    background: transparent; /* Цвет дорожки */
-    border-radius: 20px;
-  }
-  
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--color-dark-alt); /* Цвет бегунка */
-    border-radius: 20px; /* Округление бегунка */
-  }
-
 }
 
 

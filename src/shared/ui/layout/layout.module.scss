@@ -2,7 +2,6 @@
 
 .layout {
 
-
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -37,21 +36,10 @@
     padding-bottom: 20px;
     flex-grow: 1;
     width: 100vw;
-    overflow-x: hidden;
-    height: auto;
+    // overflow-x: hidden;
+    max-height: 100%;
 
-    &::-webkit-scrollbar {
-      width: 5px; /* Ширина всего элемента навигации */
-    }
-    
-    &::-webkit-scrollbar-track {
-      background: transparent; /* Цвет дорожки */
-    }
-    
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--color-dark-alt); /* Цвет бегунка */
-      border-radius: 20px; /* Округление бегунка */
-    }
+
 
     @include media.tablet {
       padding-top: 5px;
