@@ -1,5 +1,4 @@
-import { HeaderIcons } from '../../shared/ui/header-icons/header-icons'
-import { Logo } from '../../shared/ui/logo'
+import { HeaderIcons, Logo } from '../../shared/ui'
 import styles from './header.module.scss'
 
 export function Header() {

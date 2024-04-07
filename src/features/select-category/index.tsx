@@ -1,25 +1,28 @@
 import { ChangeEvent } from 'react'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { useGetAllCategotiesQuery } from '../../shared/api/api-slice'
-import { Checkbox } from '../../shared/ui/checkbox'
-import { selectedCategoriesChanged } from '../../widgets/filters/filters-slice'
-import styles from './chosen-categories.module.scss'
+import { useAppDispatch, useAppSelector } from '../../shared/hooks'
+import { Checkbox } from '../../shared/ui/'
+import { selectedCategoriesChanged } from '../../widgets/filters/'
+import styles from './select-category.module.scss'
 
 interface ChosenCategoriesProps {
   disabled: boolean
 }
 
-export function ChosenCategories(props: ChosenCategoriesProps) {
+export function SelectCategory(props: ChosenCategoriesProps) {
   const { disabled } = props
+
   const { data: categories, isLoading, isSuccess } = useGetAllCategotiesQuery()
   const dispatch = useAppDispatch()
-
   const selectedCategories = useAppSelector((state) => state.filters.selectedCategories)
+
   const badge = selectedCategories?.length > 0 ? selectedCategories.length : null
+
   function handleChosenCategoriesChange(e: ChangeEvent<HTMLInputElement>) {
     const value = e.target.value
     dispatch(selectedCategoriesChanged(value))
   }
+
   return (
     <div className={styles.wrapper}>
       <p className={styles.title}>
@@ -27,7 +30,7 @@ export function ChosenCategories(props: ChosenCategoriesProps) {
         {selectedCategories?.length === 0 && <span className={styles.title__hint}>not selected</span>}
       </p>
       <ul className={styles.categories_list}>
-        {isLoading && Array(4).fill(<Checkbox checked={false} disabled={true} label={'loading...'} />)}
+        {isLoading && <Checkbox checked={false} disabled={true} label={'loading...'} />}
         {isSuccess &&
           categories.map((category) => {
             const checked = selectedCategories.includes(category)

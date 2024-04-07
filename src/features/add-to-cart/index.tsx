@@ -1,8 +1,8 @@
 import { MouseEvent } from 'react'
-import { useAppDispatch } from '../../app/hooks'
-import { addProduct } from '../../entities/cart/model/cart-slice'
+import { addProduct } from '../../entities/cart'
 import { Product } from '../../entities/product'
 import AddToCartIcon from '../../shared/assets/icons/add-to-cart.svg?react'
+import { useAppDispatch } from '../../shared/hooks'
 import { Button } from '../../shared/ui/button'
 import styles from './add-to-cart.module.scss'
 
@@ -13,7 +13,6 @@ interface AddToCartProps {
 
 export function AddToCart(props: AddToCartProps) {
   const { product, variant = 'icon' } = props
-
   const dispatch = useAppDispatch()
 
   function handleClick(e: MouseEvent<HTMLButtonElement>) {

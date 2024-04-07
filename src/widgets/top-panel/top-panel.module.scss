@@ -1,8 +1,9 @@
 @use '../../app/styles/media' as media;
 
 .top_panel{
+  position: relative;
       z-index: 50;
-    width: 100%;
+    width: 101%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,7 +17,19 @@
   
     position: sticky;
     top: 70px;
-    
+
+    transition: all 0.25s ease;
+
+    &::before {
+      position: absolute;
+      content: '';
+      display: block;
+      top: -21px;
+      left: 0;
+      width: 110%;
+      height: 22px;
+      background-color: #f5f5f5;
+    }
 
     @include media.tablet {
       position: sticky;

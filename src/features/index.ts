@@ -1,0 +1,8 @@
+export { SelectCategory } from './select-category'
+export { ChangePriceRange } from './change-price-range/change-price-range'
+export { CountCardProducts } from './count-cart-products'
+export { DeleteFromCart } from './delete-from-cart'
+export { ResetFilters } from './reset-filters'
+export { SearchProducts } from './search-products'
+export { SortProducts } from './sort-products'
+export { AddToCart } from './add-to-cart'

@@ -1,21 +1,22 @@
 import { ChangeEvent } from 'react'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { Input } from '../../shared/ui/input'
-import { searchValueChanged } from '../../widgets/filters/filters-slice'
-import styles from './search.module.scss'
+import { useAppDispatch, useAppSelector } from '../../shared/hooks'
+import { Input } from '../../shared/ui'
+import { searchValueChanged } from '../../widgets/filters'
 
-interface SearchProps {
+interface SearchProductsProps {
   disabled: boolean
 }
 
-export function Search(props: SearchProps) {
-  const { disabled } = props
+export function SearchProducts(props: SearchProductsProps) {
   const dispatch = useAppDispatch()
   const value = useAppSelector((state) => state.filters.searchValue)
+
+  const { disabled } = props
 
   function handleSearchValueChange(e: ChangeEvent<HTMLInputElement>) {
     dispatch(searchValueChanged(e.target.value))
   }
+
   return (
     <Input
       value={value}

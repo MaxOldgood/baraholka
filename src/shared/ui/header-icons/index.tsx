@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { useAppSelector } from '../../../app/hooks'
 import Cart from '../../assets/icons/cart.svg?react'
+import { useAppSelector } from '../../hooks'
 import styles from './header-icons.module.scss'
 
 interface HeaderIconProps {

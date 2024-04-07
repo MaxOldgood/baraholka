@@ -1,16 +1,16 @@
 import { useParams } from 'react-router-dom'
-import { useAppSelector } from '../../app/hooks'
-import { CartProduct } from '../../entities/product/model/types'
-import { AddToCart } from '../../features/add-to-cart'
-import { CartProductCounter } from '../../features/cart-product-counter'
+import { CartProduct } from '../../entities/product'
+import { AddToCart, CountCardProducts } from '../../features'
 import { useGetProductByIdQuery, useGetProductsByCategoryQuery } from '../../shared/api/api-slice'
-import { Loader } from '../../shared/ui/loader'
-import { ProductsList } from '../../widgets/products-list'
+import { useAppSelector } from '../../shared/hooks'
+import { Loader } from '../../shared/ui'
+import { ProductsList } from '../../widgets'
+import { ErrorPage } from '../error'
 import styles from './details.module.scss'
 
 export function Details() {
   const { productId } = useParams()
-  const { data: product, isSuccess: isGetProductSuccess, isLoading } = useGetProductByIdQuery(productId)
+  const { data: product, isSuccess: isGetProductSuccess, isLoading, isError } = useGetProductByIdQuery(productId)
   const cartProducts: CartProduct[] = useAppSelector((state) => state.cart.products)
   const { data: thisCategoryProductsData, isSuccess: isGetCategoryProductsSuccess } = useGetProductsByCategoryQuery(
     product?.category,
@@ -21,6 +21,7 @@ export function Details() {
   return (
     <div className={`${styles.details} `}>
       {isLoading && <Loader />}
+      {isError && <ErrorPage />}
       {isGetProductSuccess && (
         <div className={`${styles.details__inner} container`}>
           <div className={styles.details__image_wrapper}>
@@ -35,7 +36,7 @@ export function Details() {
             <p className={styles.details__description}>{product.description}</p>
             <div className={styles.details__action}>
               {cartProducts.find((cartProduct) => cartProduct.id === product.id) ? (
-                <CartProductCounter
+                <CountCardProducts
                   className={styles.counter}
                   deleteIfZero={true}
                   product={cartProducts.filter((cartProduct) => cartProduct.id === product.id)[0]}

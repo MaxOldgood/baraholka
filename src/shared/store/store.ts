@@ -1,18 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit'
-import cartReducer from '../entities/cart/model/cart-slice'
-import sortReducer from '../features/sort/sort-slice'
-import { productsSlice } from '../shared/api/api-slice'
-import filtersReducer from '../widgets/filters/filters-slice'
+import cartReducer from '../../entities/cart/model/cart-slice'
+import sortReducer from '../../features/sort-products/sort-slice'
+import filtersReducer from '../../widgets/filters/model/filters-slice'
+import { apiSlice } from '../api/api-slice'
 
 export const store = configureStore({
   reducer: {
     filters: filtersReducer,
     sort: sortReducer,
     cart: cartReducer,
-    [productsSlice.reducerPath]: productsSlice.reducer,
+    [apiSlice.reducerPath]: apiSlice.reducer,
   },
   middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware().concat(productsSlice.middleware)
+    return getDefaultMiddleware().concat(apiSlice.middleware)
   },
 })
 

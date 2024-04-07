@@ -1,9 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { CartProduct } from '../../product/model/types'
-
-interface CartState {
-  products: CartProduct[]
-}
+import { CartProduct } from '../../product'
+import { CartState } from './types'
 
 const initialState: CartState = {
   products: [],

@@ -8,10 +8,23 @@
   position: fixed;
   height: 100%;
   width: 100vw;
-  overflow-y: scroll;
   overflow-x: hidden;
 
   background-color: #f5f5f5;
+
+  &::-webkit-scrollbar {
+    width: 8px; /* Ширина всего элемента навигации */
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent; /* Цвет дорожки */
+    border-radius: 20px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-dark-alt); /* Цвет бегунка */
+    border-radius: 20px; /* Округление бегунка */
+  }
 
   &__header {
     box-sizing: border-box;
@@ -37,7 +50,7 @@
     padding-bottom: 20px;
     flex-grow: 1;
     width: 100vw;
-    // overflow-x: hidden;
+
 
 
 

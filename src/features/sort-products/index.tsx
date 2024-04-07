@@ -1,19 +1,20 @@
 import { ChangeEvent } from 'react'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import Arrow from '../../shared/assets/icons/arrow.svg?react'
-import { Select } from '../../shared/ui/select'
+import { useAppDispatch, useAppSelector } from '../../shared/hooks'
+import { Select } from '../../shared/ui'
+import styles from './sort-products.module.scss'
 import { sortByChanged, sortByOptions, sortDirectionChanged } from './sort-slice'
-import styles from './sort.module.scss'
 
-interface SortProps {
+interface SortProductsProps {
   disabled: boolean
 }
 
-export function Sort(props: SortProps) {
+export function SortProducts(props: SortProductsProps) {
   const { disabled } = props
+
+  const dispatch = useAppDispatch()
   const sortBy = useAppSelector((state) => state.sort.sortBy)
   const ascendent = useAppSelector((state) => state.sort.ascendent)
-  const dispatch = useAppDispatch()
 
   const sortOptions = Object.values(sortByOptions)
 

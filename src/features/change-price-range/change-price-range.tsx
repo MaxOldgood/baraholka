@@ -1,16 +1,16 @@
 import { ChangeEvent } from 'react'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { maxPriceChanged, minPriceChanged } from '../../widgets/filters/filters-slice'
-import styles from './price-range-slider.module.scss'
+import { useAppDispatch, useAppSelector } from '../../shared/hooks'
+import { maxPriceChanged, minPriceChanged } from '../../widgets/filters/model/filters-slice'
+import styles from './change-price-range.module.scss'
 
-interface PriceRangeSliderProps {
+interface ChangePriceRangeProps {
   step: number
   min: number
   max: number
   disabled: boolean
 }
 
-export function PriceRangeSlider({ step, min, max, disabled }: PriceRangeSliderProps) {
+export function ChangePriceRange({ step, min, max, disabled }: ChangePriceRangeProps) {
   const minPrice = useAppSelector((state) => state.filters.minPrice)
   const maxPrice = useAppSelector((state) => state.filters.maxPrice)
   const dispatch = useAppDispatch()

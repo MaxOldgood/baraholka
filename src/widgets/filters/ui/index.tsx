@@ -1,8 +1,5 @@
-import { ChosenCategories } from '../../features/chosen-categories'
-import { PriceRangeSlider } from '../../features/price-range-slider/price-range-slider'
-import { ResetFilters } from '../../features/reset-filters'
-import { Search } from '../../features/search'
-import { Button } from '../../shared/ui/button'
+import { ChangePriceRange, ResetFilters, SearchProducts, SelectCategory } from '../../../features/'
+import { Button } from '../../../shared/ui'
 import styles from './filters.module.scss'
 
 interface FiltersProps {
@@ -22,9 +19,9 @@ export function Filters(props: FiltersProps) {
           <ResetFilters />
           <Button className={`${styles.close_button} visible-mobile`} text="X" onClick={onCloseButtonClick} />
         </div>
-        <Search disabled={disabled} />
-        <ChosenCategories disabled={disabled} />
-        <PriceRangeSlider min={0} max={2000} step={10} disabled={disabled} />
+        <SearchProducts disabled={disabled} />
+        <SelectCategory disabled={disabled} />
+        <ChangePriceRange min={0} max={2000} step={10} disabled={disabled} />
       </div>
     </aside>
   )

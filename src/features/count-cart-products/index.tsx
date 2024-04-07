@@ -1,16 +1,16 @@
 import { MouseEvent } from 'react'
-import { useAppDispatch } from '../../app/hooks'
-import { decrementCount, deleteProduct, incrementCount } from '../../entities/cart/model/cart-slice'
-import { type CartProduct } from '../../entities/product/model/types'
-import styles from './cart-product-counter.module.scss'
+import { decrementCount, deleteProduct, incrementCount } from '../../entities/cart'
+import { CartProduct } from '../../entities/product'
+import { useAppDispatch } from '../../shared/hooks'
+import styles from './count-cart-products.module.scss'
 
-interface CartProductCounterProps {
+interface CountCardProductsProps {
   product: CartProduct
   deleteIfZero?: boolean
   className?: string
 }
 
-export function CartProductCounter(props: CartProductCounterProps) {
+export function CountCardProducts(props: CountCardProductsProps) {
   const { className, product, deleteIfZero = false } = props
   const { count } = product
 

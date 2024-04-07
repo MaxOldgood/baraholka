@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { Product } from '../../entities/product'
-import { CategoryProduct, CategoryProductList } from '../../entities/product/model/types'
+import { CategoryProductList } from '../../entities/product/model/types'
 
 interface ProductsResponse {
   products: Product[]
@@ -11,7 +11,7 @@ interface ProductsResponse {
 
 export type Categories = string[]
 
-export const productsSlice = createApi({
+export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://dummyjson.com',
   }),
@@ -58,4 +58,4 @@ export const {
   useGetAllCategotiesQuery,
   useGetProductByIdQuery,
   useGetProductsByCategoryQuery,
-} = productsSlice
+} = apiSlice

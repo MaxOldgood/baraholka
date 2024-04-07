@@ -1,6 +1,5 @@
-import { useAppSelector } from '../../app/hooks'
-import { CartProductList } from '../../widgets/cart-product-list'
-import { CartTotal } from '../../widgets/cart-total'
+import { useAppSelector } from '../../shared/hooks'
+import { CartProductList, CartTotal } from '../../widgets'
 import styles from './cart.module.scss'
 
 export function Cart() {

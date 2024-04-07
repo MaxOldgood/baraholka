@@ -1,15 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { Categories } from '../../shared/api/api-slice'
+import { FiltetsState } from './types'
 
-interface State {
-  visibleMobile: boolean
-  searchValue: string
-  selectedCategories: Categories
-  minPrice: number
-  maxPrice: number
-}
-
-const initialState: State = {
+const initialState: FiltetsState = {
   visibleMobile: false,
   searchValue: '',
   selectedCategories: [],
@@ -59,4 +51,5 @@ export const {
   showFiltersMobile,
   hideFiltersMobile,
 } = filtersSlice.actions
+
 export default filtersSlice.reducer

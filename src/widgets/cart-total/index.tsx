@@ -1,6 +1,7 @@
-import { useAppSelector } from '../../app/hooks'
-import { CartProduct } from '../../entities/product/model/types'
-import { Button } from '../../shared/ui/button'
+import { CartProduct } from '../../entities/product'
+import { useAppSelector } from '../../shared/hooks'
+import { Button } from '../../shared/ui/'
+import { CartTotalString } from './cart-total-string'
 import styles from './cart-total.module.scss'
 
 interface CartTotalProps {
@@ -18,7 +19,6 @@ export function CartTotal(props: CartTotalProps) {
   )
   const discount = parseFloat((sum * 0.1).toFixed(2))
   const deliveryFee = parseFloat((sum * 0.05).toFixed(2))
-
   const total = parseFloat((sum - discount + deliveryFee).toFixed(2))
 
   return (
@@ -34,22 +34,6 @@ export function CartTotal(props: CartTotalProps) {
 
       <hr className={styles.divider} />
       <Button disabled={sum === 0} className={styles.cart_total__checkout_button} text="checkout" />
-    </div>
-  )
-}
-
-interface CartTotalStringProps {
-  text: string
-  sum: string
-}
-
-function CartTotalString(props: CartTotalStringProps) {
-  const { text, sum } = props
-
-  return (
-    <div className={styles.string}>
-      <p className={styles.string__text}>{text}</p>
-      <p className={styles.string__sum}>${sum}</p>
     </div>
   )
 }

@@ -4,10 +4,9 @@ import App from './App'
 import './styles/styles.scss'
 import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Cart } from '../pages/cart/cart'
-import { Details } from '../pages/details/details'
-import { Shop } from '../pages/shop/shop'
-import { store } from './store'
+import { Cart, Details, Shop } from '../pages'
+import { ErrorPage } from '../pages/error'
+import { store } from '../shared/store/store'
 
 const container = document.getElementById('root')
 
@@ -18,6 +17,7 @@ if (container) {
     {
       path: '/baraholka/',
       element: <App />,
+      errorElement: <ErrorPage />,
       children: [
         {
           path: '/baraholka/',

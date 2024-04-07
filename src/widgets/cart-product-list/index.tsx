@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom'
-import { useAppSelector } from '../../app/hooks'
-import { CartProductCard } from '../../entities/cart/ui/cart-product-card'
-import { CartProduct } from '../../entities/product/model/types'
-import { CartProductCounter } from '../../features/cart-product-counter'
-import { DeleteFromCart } from '../../features/delete-from-cart'
+import { CartProductCard } from '../../entities/cart'
+import { CartProduct } from '../../entities/product'
+import { CountCardProducts, DeleteFromCart } from '../../features'
 import cartImage from '../../shared/assets/img/cart.jpg'
-import { Button } from '../../shared/ui/button'
+import { useAppSelector } from '../../shared/hooks'
+import { Button } from '../../shared/ui'
 import styles from './cart-product-list.module.scss'
 
 export function CartProductList() {
@@ -34,7 +33,7 @@ export function CartProductList() {
                 key={product.id}
                 product={product}
                 upperActionSlot={<DeleteFromCart productId={product.id} />}
-                bottomActionSlot={<CartProductCounter product={product} />}
+                bottomActionSlot={<CountCardProducts product={product} />}
               />
             )
           })}

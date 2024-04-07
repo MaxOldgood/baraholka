@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { type Product } from '../model/types'
+import { Product } from '../model/types'
 import styles from './product-card.module.scss'
 
 interface ProductCardProps {

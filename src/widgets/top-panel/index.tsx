@@ -1,7 +1,7 @@
-import { useAppDispatch } from '../../app/hooks'
-import { Sort } from '../../features/sort'
-import { Button } from '../../shared/ui/button'
-import { showFiltersMobile } from '../filters/filters-slice'
+import { SortProducts } from '../../features'
+import { useAppDispatch } from '../../shared/hooks'
+import { Button } from '../../shared/ui'
+import { showFiltersMobile } from '../filters'
 import styles from './top-panel.module.scss'
 
 interface TopPanelProps {
@@ -22,7 +22,7 @@ export function TopPanel(props: TopPanelProps) {
     <div className={styles.top_panel}>
       <Button text="Filters" className={`${styles.filters_button} visible-mobile`} onClick={showFilters} />
       {<p className={`${styles.products_number} hidden-mobile`}>Found {productsNumber} products</p>}
-      <Sort disabled={disabled} />
+      <SortProducts disabled={disabled} />
     </div>
   )
 }
