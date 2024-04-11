@@ -33,7 +33,7 @@ All products and categories are fetching by API.
 Change filters, sort products, search and see result momentally.
   </p>
      <p>
- Works well on every screen size. Check it out!
+ Works well on every screen size.<a href='https://maxoldgood.github.io/baraholka/'> Check it out! </a>
   </p>
 
     
